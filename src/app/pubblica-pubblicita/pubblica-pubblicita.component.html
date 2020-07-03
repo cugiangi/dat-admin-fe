@@ -1,0 +1,14 @@
+<div class="row mt-4">
+    <div class="col-3">
+        <span>Totem</span>
+        <select class="browser-default custom-select" [(ngModel)]="selectedTotem">
+            <option *ngFor="let item of totemService.totems" [value]="item.name">{{item.name}}</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <app-calendar></app-calendar>
+    </div>
+
+</div>

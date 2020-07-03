@@ -1,0 +1,43 @@
+<!-- Pulsanti -->
+<div class="row mt-3">
+    <div class="col-3">
+        <div *ngFor="let item of pulsanti">
+            <div class="row mt-3">
+                <div class="col-10">
+                    <button type="button" class="btn btn-primary w-100" [routerLink]="item.url">{{item.desc}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista di totem-->
+    <div class="col-6">
+        <div *ngFor="let totem of totemService.totems">
+            <div class="row mt-4">
+                <div class="col-8">
+                    <div class="btn btn-primary btn-static-blue w-100">{{totem.name}}</div>
+                </div>
+            </div>
+            <div *ngFor="let pubb of totem.pubblicita | keyvalue">
+                <div class="row mt-1">
+                    <div class="col-3 pr-0">
+                        <div class="btn btn-primary btn-static-green w-100 h-100" [ngClass]="pubb.key.class">
+                            <span class="align-middle">
+                                {{pubb.key.name}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-5 pl-0">
+                        <div class="btn btn-primary btn-static-grey w-100">
+                            <ul>
+                                <li *ngFor="let item of pubb.value">
+                                    <div>{{item.name}}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
